@@ -23,11 +23,21 @@ function checkNumber() {
 
 const inputSquare = document.getElementById('sqin');
 const outputSquare = document.getElementById('sqout');
+const selector = document.getElementById("sqselect");
 
-
-inputSquare.addEventListener('mouseenter', Sqcheck);
-
+outputSquare.addEventListener('mouseenter', Sqcheck);
+selector.addEventListener('change', Sqcheck);
 function Sqcheck() {
     const sqguess = inputSquare.value;
     outputSquare.innerText = sqguess**2;
+    if (selector.value === "square") {
+        outputSquare.innerText = sqguess**2;
+    }
+    else if (selector.value === "cube") {
+      outputSquare.innerText = sqguess**3;
+  }
+  else if (selector.value === "double7") {
+    outputSquare.innerText = 2*sqguess+7;
 }
+}
+
